@@ -1,0 +1,37 @@
+package com.globallogic.helloworld;
+
+import java.util.Scanner;
+
+class PositiveNumber extends RuntimeException
+{
+	public PositiveNumber(String msg)
+	{
+		super(msg);
+	}
+}
+public class Mycusexception {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		try(Scanner scanner=new Scanner(System.in))
+		{
+		if(n<0)			
+		{
+			throw new PositiveNumber("hello");
+		}
+		}
+		catch(Exception e)
+		{
+			
+		}
+		finally {
+			
+		}
+
+
+	}
+}
+
+

@@ -1,0 +1,56 @@
+package com.globallogic.helloworld;
+
+
+class Employee
+{
+	int id;
+	String s;
+	String t;
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", s=" + s + ", t=" + t + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getS() {
+		return s;
+	}
+	public void setS(String s) {
+		this.s = s;
+	}
+	public String getT() {
+		return t;
+	}
+	public void setT(String t) {
+		this.t = t;
+	}
+	public void printA()
+	{
+		System.out.println("A");
+	}
+}
+
+
+
+
+
+
+public class statickey {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Employee e=new Employee(11,"AB","goa");
+		System.out.println(e);
+
+	}
+
+	public statickey() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}
