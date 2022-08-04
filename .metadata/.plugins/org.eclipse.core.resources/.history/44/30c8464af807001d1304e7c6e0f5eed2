@@ -1,0 +1,26 @@
+package com.globallogic.helloworld;
+import java.util.*;
+
+public class orange {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String s=sc.next();
+		sc.nextLine();
+	
+		System.out.println("Enter the word");
+		
+		String w=sc.next();
+		s.contains(w);
+		if(s.contains(w)) {
+			System.out.println("Found");
+		}
+		else
+		{
+			System.out.println("Not found");
+		}
+
+	}
+
+}

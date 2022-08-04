@@ -1,0 +1,15 @@
+@charset "ISO-8859-1";
+
+.navbar-brand{
+	margin:0;
+	padding :0;
+}
+.nav-item active
+{
+	height:100vh;
+	
+}
+.btn btn-primary
+{
+	align: c;
+}
