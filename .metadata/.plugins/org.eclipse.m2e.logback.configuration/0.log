@@ -927,3 +927,5 @@ java.io.IOException: Creating directories for Z:\.config\jgit failed
 2022-08-04 18:32:59,826 [Worker-76: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amerendra.kumar\eclipse-workspace\Mymaven\src\test\resources
 2022-08-04 18:33:00,836 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-08-04 18:33:00,836 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amerendra.kumar\eclipse-workspace\Mymaven\src\main\resources
+2022-08-04 18:33:00,837 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-08-04 18:33:00,837 [Worker-79: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amerendra.kumar\eclipse-workspace\Mymaven\src\test\resources

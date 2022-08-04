@@ -1,0 +1,375 @@
+
+mysql> use Office
+Database changed
+mysql> desc Employee;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | int          | YES  |     | NULL    |       |
+| emp_name  | varchar(100) | YES  |     | NULL    |       |
+| job_name  | varchar(100) | YES  |     | NULL    |       |
+| mid       | int          | YES  |     | NULL    |       |
+| hire_date | date         | YES  |     | NULL    |       |
+| salary    | double       | YES  |     | NULL    |       |
+| deptid    | int          | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> select * from employee;
++-------+----------+-----------+------+------------+--------+--------+
+| id    | emp_name | job_name  | mid  | hire_date  | salary | deptid |
++-------+----------+-----------+------+------------+--------+--------+
+| 68319 | Kayling  | President |  155 | 1991-09-12 |  10000 |      1 |
+| 66928 | Blaze    | Manager   |  165 | NULL       |  10000 |      1 |
+| 67832 | Clare    | Manager   |  175 | NULL       |  11000 |      2 |
+| 65464 | Jonas    | Manager   |  185 | 2005-06-02 |  13000 |      2 |
+| 68493 | Aeyan    | Manager   |  195 | 1995-07-22 |  15000 |      3 |
++-------+----------+-----------+------+------------+--------+--------+
+
+mysql> select emp_name,concat('$',salary)as salary from employee;
++----------+--------+
+| emp_name | salary |
++----------+--------+
+| Kayling  | $11500 |
+| Blaze    | $11500 |
+| Clare    | $12650 |
+| Jonas    | $14950 |
+| Aeyan    | $17250 |
++----------+--------+
+
+mysql>  select concat(emp_name," & ",job_name)"EMP NAME & JOB"from employee;
++---------------------+
+| EMP NAME & JOB      |
++---------------------+
+| Kayling & President |
+| Blaze & Manager     |
+| Clare & Manager     |
+| Jonas & Manager     |
+| Aeyan & Manager     |
++---------------------+
+
+
+
+mysql> select salary from employee;
++--------+
+| salary |
++--------+
+|  11500 |
+|  11500 |
+|  12650 |
+|  14950 |
+|  17250 |
++--------+
+
+
+mysql> select distinct job_name from employee;
++-----------+
+| job_name  |
++-----------+
+| President |
+| Manager   |
++-----------+
+
+
+mysql> select concat(emp_name,"(",job_name,")")"Employee"from employee;
++--------------------+
+| Employee           |
++--------------------+
+| Kayling(President) |
+| Blaze(Manager)     |
+| Clare(Manager)     |
+| Jonas(Manager)     |
+| Aeyan(Manager)     |
++--------------------+
+5 rows in set (0.00 sec)
+
+
+mysql> select id,emp_name,date_format(hire_date,'%M,%d,%Y') "Hire Date"from employee;
++-------+----------+-------------------+
+| id    | emp_name | Hire Date         |
++-------+----------+-------------------+
+| 68319 | Kayling  | September,12,1991 |
+| 66928 | Blaze    | NULL              |
+| 67832 | Clare    | NULL              |
+| 65464 | Jonas    | June,02,2005      |
+| 68493 | Aeyan    | July,22,1995      |
++-------+----------+-------------------+
+
+
+
+mysql> select emp_name, length(emp_name) "length"from employee;
++----------+--------+
+| emp_name | length |
++----------+--------+
+| Kayling  |      7 |
+| Blaze    |      5 |
+| Clare    |      5 |
+| Jonas    |      5 |
+| Aeyan    |      5 |
++----------+--------+
+
+
+mysql> select emp_name,Salary from employee;
++----------+--------+
+| emp_name | Salary |
++----------+--------+
+| Kayling  |  11500 |
+| Blaze    |  11500 |
+| Clare    |  12650 |
+| Jonas    |  14950 |
+| Aeyan    |  17250 |
++----------+--------+
+
+mysql> select distinct (deptid),job_name from Employee;
++--------+-----------+
+| deptid | job_name  |
++--------+-----------+
+|      1 | President |
+|      1 | Manager   |
+|      2 | Manager   |
+|      3 | Manager   |
++--------+-----------+
+
+
+
+mysql> select id,emp_name,deptid from employee where deptid!=1;
++-------+----------+--------+
+| id    | emp_name | deptid |
++-------+----------+--------+
+| 67832 | Clare    |      2 |
+| 65464 | Jonas    |      2 |
+| 68493 | Aeyan    |      3 |
++-------+----------+--------+
+
+
+
+mysql> select id,emp_name,deptid,hire_date from employee where hire_date<'1995-01-01';
++-------+----------+--------+------------+
+| id    | emp_name | deptid | hire_date  |
++-------+----------+--------+------------+
+| 68319 | Kayling  |      1 | 1991-09-12 |
++-------+----------+--------+------------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select avg(salary)"Average salary"from employee where job_name='MANAGER';
++----------------+
+| Average salary |
++----------------+
+|        14087.5 |
++----------------+
+
+
+
+
+mysql> select * from employee where emp_name ="clare";
++-------+----------+----------+------+-----------+--------+--------+
+| id    | emp_name | job_name | mid  | hire_date | salary | deptid |
++-------+----------+----------+------+-----------+--------+--------+
+| 67832 | Clare    | Manager  |  175 | NULL      |  12650 |      2 |
++-------+----------+----------+------+-----------+--------+--------+
+
+
+
+mysql> select id,emp_name,round(salary*1.25,2)"Incremented Salary" from employee where salary*1.25>3000;
++-------+----------+--------------------+
+| id    | emp_name | Incremented Salary |
++-------+----------+--------------------+
+| 68319 | Kayling  |              14375 |
+| 66928 | Blaze    |              14375 |
+| 67832 | Clare    |            15812.5 |
+| 65464 | Jonas    |            18687.5 |
+| 68493 | Aeyan    |            21562.5 |
++-------+----------+--------------------+
+
+
+
+mysql> select id,emp_name from employee where length(emp_name)=5;
++-------+----------+
+| id    | emp_name |
++-------+----------+
+| 66928 | Blaze    |
+| 67832 | Clare    |
+| 65464 | Jonas    |
+| 68493 | Aeyan    |
++-------+----------+
+
+mysql> select id,emp_name,hire_date from employee where date_format(hire_date,'%M')='June';
++-------+----------+------------+
+| id    | emp_name | hire_date  |
++-------+----------+------------+
+| 65464 | Jonas    | 2005-06-02 |
++-------+----------+------------+
+
+
+mysql> select concat(emp_name, " works for ",mid) "Works for" from employee;
++-----------------------+
+| Works for             |
++-----------------------+
+| Kayling works for 155 |
+| Blaze works for 165   |
+| Clare works for 175   |
+| Jonas works for 185   |
+| Aeyan works for 195   |
++-----------------------+
+
+
+
+mysql> select id,emp_name from employee where job_name='Manager';
++-------+----------+
+| id    | emp_name |
++-------+----------+
+| 66928 | Blaze    |
+| 67832 | Clare    |
+| 65464 | Jonas    |
+| 68493 | Aeyan    |
++-------+----------+
+4 rows in set (0.00 sec)
+
+
+
+mysql> select id,emp_name,hire_date from employee where floor(Datediff(curdate(),hire_date)/365)>27;
++-------+----------+------------+
+| id    | emp_name | hire_date  |
++-------+----------+------------+
+| 68319 | Kayling  | 1991-09-12 |
++-------+----------+------------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select id,emp_name,salary from employee where salary<15000;
++-------+----------+--------+
+| id    | emp_name | salary |
++-------+----------+--------+
+| 68319 | Kayling  |  11500 |
+| 66928 | Blaze    |  11500 |
+| 67832 | Clare    |  12650 |
+| 65464 | Jonas    |  14950 |
++-------+----------+--------+
+
+
+
+mysql> select id,emp_name,salary from employee where job_name='Manager';
++-------+----------+--------+
+| id    | emp_name | salary |
++-------+----------+--------+
+| 66928 | Blaze    |  11500 |
+| 67832 | Clare    |  12650 |
+| 65464 | Jonas    |  14950 |
+| 68493 | Aeyan    |  17250 |
++-------+----------+--------+
+4 rows in set (0.00 sec)
+
+
+mysql> select id,emp_name,salary,hire_date from employee where hire_date like '1991-%';
++-------+----------+--------+------------+
+| id    | emp_name | salary | hire_date  |
++-------+----------+--------+------------+
+| 68319 | Kayling  |  11500 | 1991-09-12 |
++-------+----------+--------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> select id,emp_name,hire_date,salary from employee where hire_date<'1995-04-01';
++-------+----------+------------+--------+
+| id    | emp_name | hire_date  | salary |
++-------+----------+------------+--------+
+| 68319 | Kayling  | 1991-09-12 |  11500 |
++-------+----------+------------+--------+
+1 row in set (0.00 sec)
+
+
+
+mysql> select emp_name,job_name from employee where job_name!='manager';
++----------+-----------+
+| emp_name | job_name  |
++----------+-----------+
+| Kayling  | President |
++----------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select id,emp_name,hire_date from employee where hire_date='1991-09-12';
++-------+----------+------------+
+| id    | emp_name | hire_date  |
++-------+----------+------------+
+| 68319 | Kayling  | 1991-09-12 |
++-------+----------+------------+
+1 row in set (0.00 sec)
+
+
+mysql> select id,emp_name,hire_date,salary from employee where mid>150;
++-------+----------+------------+--------+
+| id    | emp_name | hire_date  | salary |
++-------+----------+------------+--------+
+| 68319 | Kayling  | 1991-09-12 |  11500 |
+| 66928 | Blaze    | NULL       |  11500 |
+| 67832 | Clare    | NULL       |  12650 |
+| 65464 | Jonas    | 2005-06-02 |  14950 |
+| 68493 | Aeyan    | 1995-07-22 |  17250 |
++-------+----------+------------+--------+
+
+
+mysql> select id,emp_name,hire_date,salary,salary/30 "Daili Salary" from employee where salary/30>100;
++-------+----------+------------+--------+-------------------+
+| id    | emp_name | hire_date  | salary | Daili Salary      |
++-------+----------+------------+--------+-------------------+
+| 68319 | Kayling  | 1991-09-12 |  11500 | 383.3333333333333 |
+| 66928 | Blaze    | NULL       |  11500 | 383.3333333333333 |
+| 67832 | Clare    | NULL       |  12650 | 421.6666666666667 |
+| 65464 | Jonas    | 2005-06-02 |  14950 | 498.3333333333333 |
+| 68493 | Aeyan    | 1995-07-22 |  17250 |               575 |
++-------+----------+------------+--------+-------------------+
+5 rows in set (0.00 sec)
+
+
+mysql> select id,emp_name,salary from employee where salary%2=1;
+Empty set (0.00 sec)
+
+mysql> select id,emp_name,salary from employee where salary%2=0;
++-------+----------+--------+
+| id    | emp_name | salary |
++-------+----------+--------+
+| 68319 | Kayling  |  11500 |
+| 66928 | Blaze    |  11500 |
+| 67832 | Clare    |  12650 |
+| 65464 | Jonas    |  14950 |
+| 68493 | Aeyan    |  17250 |
++-------+----------+--------+
+5 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
