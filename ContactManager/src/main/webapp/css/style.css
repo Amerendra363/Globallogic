@@ -1,0 +1,6 @@
+@charset "ISO-8859-1";
+body{
+	background-image:url("../image/b.jpg");
+	background-size:cover;
+	height:100%;
+}

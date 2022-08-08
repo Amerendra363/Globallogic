@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\amerendra.kumar\eclipse-workspace\Mymaven"/>
+			<item value="C:\Users\amerendra.kumar\eclipse-workspace\MywebAPP"/>
 			<item value="C:\Users\amerendra.kumar\eclipse-workspace\day14\src\day14\Myjdbc.java"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,13 +28,21 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.globallogic.maven.Mymaven2"/>
+			<item value="com.globallogic.employee.Employeemanagement"/>
+			<item value="com.globallogic.web"/>
 			<item value="com.globallogic.maven"/>
+			<item value="com.globallogic.maven.MywebAPP"/>
+			<item value="com.globallogic.maven.Mymaven2"/>
 		</list>
 		<list key="groupId">
+			<item value="com.globallogic.employee"/>
+			<item value="com.globallogic.web"/>
 			<item value="com.globallogic.maven"/>
 		</list>
 		<list key="artifactId">
+			<item value="Employeemanagement"/>
+			<item value="Mywebapp"/>
+			<item value="MywebAPP"/>
 			<item value="Mymaven2"/>
 			<item value="Mymaven"/>
 		</list>
