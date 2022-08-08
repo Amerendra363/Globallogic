@@ -10,6 +10,21 @@
 </head>
 
 <body >
+
+<header>
+		<nav class="navbar navbar-expand-md navbar-dark"
+			style="background-color: #ff4000">
+			<div>
+				<a> Employee Management  
+				
+				</a>
+			</div>
+   
+		</nav>
+	</header>
+
+
+
 	<div align="center">
 		<h1>New/Edit Employee</h1>
 		<form:form action="save" method="post" modelAttribute="contact">
