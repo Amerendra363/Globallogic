@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\amerendra.kumar\eclipse-workspace\EmployeeManager"/>
+			<item value="C:\Users\amerendra.kumar\eclipse-workspace\learning"/>
 			<item value="C:\Users\amerendra.kumar\eclipse-workspace\Mymaven"/>
 			<item value="C:\Users\amerendra.kumar\eclipse-workspace\MywebAPP"/>
 			<item value="C:\Users\amerendra.kumar\eclipse-workspace\day14\src\day14\Myjdbc.java"/>
@@ -28,6 +30,9 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.dependency.Injection"/>
+			<item value="com.shopping.Mycart"/>
+			<item value="com.telusko.learning"/>
 			<item value="com.globallogic.employee.Employeemanagement"/>
 			<item value="com.globallogic.web"/>
 			<item value="com.globallogic.maven"/>
@@ -35,11 +40,17 @@
 			<item value="com.globallogic.maven.Mymaven2"/>
 		</list>
 		<list key="groupId">
+			<item value="com.dependency"/>
+			<item value="com.shopping"/>
+			<item value="com.telusko"/>
 			<item value="com.globallogic.employee"/>
 			<item value="com.globallogic.web"/>
 			<item value="com.globallogic.maven"/>
 		</list>
 		<list key="artifactId">
+			<item value="Injection"/>
+			<item value="Mycart"/>
+			<item value="learning"/>
 			<item value="Employeemanagement"/>
 			<item value="Mywebapp"/>
 			<item value="MywebAPP"/>
@@ -78,7 +89,36 @@
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="com.employeeManagement"/>
+			<item value="com.contacting"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="EmployeeManager"/>
+			<item value="ContactManager"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item key="width" value="480"/>
+		<item key="height" value="838"/>
+		<item key="x" value="1216"/>
+		<item key="y" value="0"/>
 	</section>
 </section>
