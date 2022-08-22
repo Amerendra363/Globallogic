@@ -40,6 +40,25 @@ public class ProductController {
 	}
 	
 	
+	
+	@GetMapping("/prodList/{id}")
+	public List<String> showProductByCategoryId(@PathVariable("id") int id) {
+
+		List<ProductEntity> prod = pRepo.findAll();
+		System.out.println(prod);
+
+		List<ProductEntity> prodName = prod.stream().filter(e -> (e.getCaEn().getId()) == id)
+				.collect(Collectors.toList());
+
+		System.out.println(prodName);
+		List<String> name = new ArrayList<>();
+		for (ProductEntity pro : prodName) {
+			name.add(pro.getName());
+		}
+		return name;
+	}
+	
+	
 	@GetMapping("/prod/{name}")
 	public List<String> showProductByCategoryName(@PathVariable("name") String cName){
 		
@@ -54,6 +73,57 @@ public class ProductController {
 			name.add(pro.getName());
 		}
 		return name;	
+	}
+	
+	@GetMapping("/search/{cName}/{pName}")
+	public List<ProductEntity> searchProduct(@PathVariable("cName") String cName,@PathVariable("pName") String pName) {
+		
+		List<ProductEntity> prod = pRepo.findAll();
+		System.out.println(prod);
+		
+		List<ProductEntity> prodName = prod.stream().filter(e -> (e.getCaEn().getCat()).equalsIgnoreCase(cName) &&
+				(e.getName()).equalsIgnoreCase(pName)).collect(Collectors.toList());
+		
+		System.out.println(prodName);
+		
+		
+		return prodName;
+		
+	}
+	
+	
+	@GetMapping("/searchmerchant/{mName}/{mLocation}")
+	public List<String> searchMerchant(@PathVariable("mName") String mName,@PathVariable("mLocation") String mLocation) {
+		
+		List<ProductEntity> prod = pRepo.findAll();
+		System.out.println(prod);
+		
+		List<ProductEntity> prodName = prod.stream().filter(e -> (e.getMeEN().getName()).equalsIgnoreCase(mName) &&
+				(e.getMeEN().getLocation()).equalsIgnoreCase(mLocation)).collect(Collectors.toList());
+		
+		System.out.println(prodName);
+		List<String> name = new ArrayList<>();
+		for(ProductEntity pro : prodName ) {
+			name.add(pro.getMeEN().getName());
+		}
+		return name;
+		
+		
+	}
+	
+	
+	@GetMapping("/fullprod/{name}")
+	public List<ProductEntity> showFullProductByCategoryName(@PathVariable("name") String cName) {
+
+		List<ProductEntity> prod = pRepo.findAll();
+		System.out.println(prod);
+
+		List<ProductEntity> prodName = prod.stream().filter(e -> (e.getCaEn().getCat()).equalsIgnoreCase(cName))
+				.collect(Collectors.toList());
+
+		System.out.println(prodName);
+
+		return prodName;
 	}
 	
 	

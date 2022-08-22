@@ -1,5 +1,4 @@
-package com.example.demoEcommerce.controller;
-
+package com.example.demomany.Controller;
 
 import java.util.List;
 
@@ -13,52 +12,51 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demoEcommerce.entity.CustomerEntity;
-import com.example.demoEcommerce.entity.ProductEntity;
-import com.example.demoEcommerce.repo.CustomerRepo;
-import com.example.demoEcommerce.repo.productRepo;
+import com.example.demomany.Entity.Address;
+import com.example.demomany.Repo.AddressRepo;
 
 
 @RestController
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping("/address")
+public class AddressCon {
 	
 	@Autowired
-	productRepo pRepo;
-
-	@Autowired
-	CustomerRepo repo;
+	AddressRepo repo;
+	
 	
 	@GetMapping("/")
-	public List<CustomerEntity> showDetails(){
+	public List<Address> showDetails() {
 		
-		return repo.findAll();			
-	}
-	
-	@PostMapping("/")
-	public List<CustomerEntity> addDetails(@RequestBody CustomerEntity cus){
-		
-		ProductEntity prod = pRepo.findById(cus.getProduct().getId()).get();
-		cus.setProduct(prod);
-		repo.save(cus);
 		return repo.findAll();
+	}
+
+	@PostMapping("/")
+	public List<Address> addAddress(@RequestBody Address add) {
+		
+		repo.save(add);
+		System.out.println("Data Added Successfully");
+		return repo.findAll();
+				
+		
 	}
 	
 	@PutMapping("/")
-	public List<CustomerEntity> updateDetails(@RequestBody CustomerEntity cus){
-		
-		repo.save(cus);
+	public List<Address> updateAddress(@RequestBody Address add) {
+		repo.save(add);
+		System.out.println("Data updated Successfully");
 		return repo.findAll();
+		
 	}
 	
-
-	
 	@DeleteMapping("/{id}")
-	public List<CustomerEntity> deleteDetails(@PathVariable("id") int id){
+	public List<Address> deleteAddress(@PathVariable("id") long id) {
 		
+		System.err.println("Deleted id is "+id);
 		repo.deleteById(id);
 		return repo.findAll();
 	}
+	
+	
 	
 	
 }
