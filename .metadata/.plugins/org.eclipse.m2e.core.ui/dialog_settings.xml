@@ -30,32 +30,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.dependency.Injection"/>
-			<item value="com.shopping.Mycart"/>
-			<item value="com.telusko.learning"/>
-			<item value="com.globallogic.employee.Employeemanagement"/>
-			<item value="com.globallogic.web"/>
-			<item value="com.globallogic.maven"/>
-			<item value="com.globallogic.maven.MywebAPP"/>
-			<item value="com.globallogic.maven.Mymaven2"/>
 		</list>
 		<list key="groupId">
-			<item value="com.dependency"/>
-			<item value="com.shopping"/>
-			<item value="com.telusko"/>
-			<item value="com.globallogic.employee"/>
-			<item value="com.globallogic.web"/>
-			<item value="com.globallogic.maven"/>
 		</list>
 		<list key="artifactId">
-			<item value="Injection"/>
-			<item value="Mycart"/>
-			<item value="learning"/>
-			<item value="Employeemanagement"/>
-			<item value="Mywebapp"/>
-			<item value="MywebAPP"/>
-			<item value="Mymaven2"/>
-			<item value="Mymaven"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
