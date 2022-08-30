@@ -1,15 +1,23 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="exam")
 public class ExamEntity {
+	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
@@ -27,6 +35,35 @@ public class ExamEntity {
 	int time;
 	@Column
 	String Estatus;
+	
+	
+	@ManyToMany(cascade = CascadeType.PERSIST)
+	List<AdminEntity> admin;
+	
+	
+	
+	
+	public List<AdminEntity> getAdmin() {
+		return admin;
+	}
+	public void setAdmin(List<AdminEntity> admin) {
+		this.admin = admin;
+	}
+
+	
+	public ExamEntity(int id, String ename, String subject, String course, String stream, String noQ, int time,
+			String estatus, List<AdminEntity> admin) {
+		super();
+		this.id = id;
+		Ename = ename;
+		Subject = subject;
+		Course = course;
+		this.stream = stream;
+		NoQ = noQ;
+		this.time = time;
+		Estatus = estatus;
+		this.admin = admin;
+	}
 	public int getId() {
 		return id;
 	}
@@ -78,7 +115,7 @@ public class ExamEntity {
 	@Override
 	public String toString() {
 		return "ExamEntity [id=" + id + ", Ename=" + Ename + ", Subject=" + Subject + ", Course=" + Course + ", stream="
-				+ stream + ", NoQ=" + NoQ + ", time=" + time + ", Estatus=" + Estatus + "]";
+				+ stream + ", NoQ=" + NoQ + ", time=" + time + ", Estatus=" + Estatus + ", admin=" + admin + "]";
 	}
 	public ExamEntity(int id, String ename, String subject, String course, String stream, String noQ, int time,
 			String estatus) {

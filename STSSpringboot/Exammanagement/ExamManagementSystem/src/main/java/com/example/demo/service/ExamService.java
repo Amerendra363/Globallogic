@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
-public class ExamService {
+import org.springframework.stereotype.Service;
+
+@Service
+public interface ExamService {
+	public String attemptExam(int id);
 
 }
