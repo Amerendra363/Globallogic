@@ -22,5 +22,7 @@ public interface DeptServices {
 
 	
 	public void deleteDepartment(long id);
+	
+	
 
 }

@@ -39,5 +39,7 @@ public class DeptServicesImpl implements DeptServices {
 		// TODO Auto-generated method stub
 		repo.deleteById(id);
 	}
+	
+	
 
 }

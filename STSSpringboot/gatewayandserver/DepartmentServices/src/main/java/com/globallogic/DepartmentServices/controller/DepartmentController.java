@@ -43,5 +43,9 @@ public class DepartmentController {
 	public void deleteDepartment(long id) {
 		deptServices.deleteDepartment(id);
 	}
+//	@GetMapping("/{id}")
+//	public ResponseTemp getEmpwithDept(@PathVariable Long empId) {
+//		return deptServices.getEmpwithDept(empId);
+//	}
 	
 }

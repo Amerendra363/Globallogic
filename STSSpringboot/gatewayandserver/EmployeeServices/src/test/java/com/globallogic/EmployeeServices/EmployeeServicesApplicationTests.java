@@ -1,4 +1,4 @@
-package com.globallogic.EmployeeServices;
+package src.test.java.com.globallogic.EmployeeServices;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

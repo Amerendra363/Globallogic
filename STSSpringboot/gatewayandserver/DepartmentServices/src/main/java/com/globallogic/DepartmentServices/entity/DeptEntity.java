@@ -62,5 +62,7 @@ public class DeptEntity {
 	
 	@Column
 	String location;
+	
+	
 
 }

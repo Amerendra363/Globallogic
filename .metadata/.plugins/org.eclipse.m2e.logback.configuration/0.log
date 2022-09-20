@@ -14631,3 +14631,14 @@ java.io.IOException: Creating directories for Z:\.config\jgit failed
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
 	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+2022-09-12 15:01:39,776 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2022-09-12 15:01:44,164 [JGit-FileStoreAttributeWriter-2] ERROR org.eclipse.jgit.util.FS - Cannot save config file 'FileBasedConfig[Z:\.config\jgit\config]'
+java.io.IOException: Creating directories for Z:\.config\jgit failed
+	at org.eclipse.jgit.util.FileUtils.mkdirs(FileUtils.java:413) ~[na:na]
+	at org.eclipse.jgit.internal.storage.file.LockFile.lock(LockFile.java:140) ~[na:na]
+	at org.eclipse.jgit.storage.file.FileBasedConfig.save(FileBasedConfig.java:184) ~[na:na]
+	at org.eclipse.jgit.util.FS$FileStoreAttributes.saveToConfig(FS.java:761) ~[na:na]
+	at org.eclipse.jgit.util.FS$FileStoreAttributes.lambda$5(FS.java:443) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
