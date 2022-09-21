@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{PaymentService.java[PaymentService" modifiers="513" timestamp="1663689157033"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{AddressService.java[AddressService" modifiers="513" timestamp="1663689157008"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{AccountService.java[AccountService" modifiers="513" timestamp="1663689157000"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{CreditCardService.java[CreditCardService" modifiers="513" timestamp="1663689157017"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{StatementService.java[StatementService" modifiers="513" timestamp="1663689157041"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{TransactionService.java[TransactionService" modifiers="513" timestamp="1663689157049"/>
+    <typeInfo handle="=creditcardpayment/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.globallogic.creditcardpayment.services{CustomerService.java[CustomerService" modifiers="513" timestamp="1663689157024"/>
+</typeInfoHistroy>
